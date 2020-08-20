@@ -1,4 +1,5 @@
 from twython import Twython
+from message import Message
 
 from auth import (
     consumer_key,
