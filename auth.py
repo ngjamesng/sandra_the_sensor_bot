@@ -1,6 +1,6 @@
+from os import getenv
 from dotenv import load_dotenv
 load_dotenv()
-from os import getenv
 
 consumer_key = getenv("API_KEY")
 consumer_secret = getenv("API_SECRET_KEY")
