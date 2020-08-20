@@ -1,5 +1,6 @@
 from twython import Twython
 from message import Message
+from sensor_data import Sensor
 
 from auth import (
     consumer_key,
@@ -15,6 +16,7 @@ twitter = Twython(
     access_token_secret
 )
 
-message = "Hello world!"
+m = Message()
+message = m.get_message()
 twitter.update_status(status=message)
 print("Tweeted: %s" % message)
