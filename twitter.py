@@ -18,5 +18,5 @@ twitter = Twython(
 
 m = Message()
 message = m.get_message()
-twitter.update_status(status=message)
-print("Tweeted: %s" % message)
+resp = twitter.update_status(status=message)
+print("Tweeted: %s" % message, 'resp:', resp)
