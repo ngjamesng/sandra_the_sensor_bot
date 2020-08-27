@@ -1,5 +1,6 @@
 ## Sandra the Sensor Bot
-![Image of Sandra The Sensor Bot](IMG_3350.jpg)
+<img src ="IMG_3350.jpg" width ="200" alt="Image of Sandra The Sensor Bot">
+
 Hello, thank you for checking out my repository. Sandra the Sensor Bot is a twitter bot, with an interesting twist. This was really a way for me to incorporate hardware. 
 
 The codebase is mainly written in Python. Sandra currently has the ability to read the temperature, humidity, and air pressure. 
