@@ -1,5 +1,5 @@
 ## Sandra the Sensor Bot
-
+![Image of Sandra The Sensor Bot](IMG_3350.jpg | width=100)
 Hello, thank you for checking out my repository. Sandra the Sensor Bot is a twitter bot, with an interesting twist. This was really a way for me to incorporate hardware. 
 
 The codebase is mainly written in Python. Sandra currently has the ability to read the temperature, humidity, and air pressure. 
@@ -23,16 +23,20 @@ This is not a usual web development project since there is hardware required.
 
 #### Installations and setup
 
+***As a reminder, you will need the required hardware. This will not work unless you have a Raspberry Pi and Sense HAT.***
+
 Python3 must be installed on your Raspberry Pi. Additionally, you may need to install the following: 
 
 * Twython
 * dotenv
 * python-dotenv
+* python3-matplotlib
 
-For easy installations, go to the home directory and run the following line in your terminal: 
+You may run into problems depending on which dependency manager you use.
+Most of the dependencies should be preinstalled on your Raspberry Pi OS. If you do run into problems, you can try running:
 
 ```
-pip3 install requirements.txt
+sudo apt-get install <MISSING_PACKAGE_HERE>
 ```
 You will also need to sign up for a Twitter Developer Account. Please see the instructions to get a [Twitter Developer Account](https://developer.twitter.com/en). Once you have an account, in the home directory of the repot, run the following: `touch .env` and then open the .env file. Paste the following in here: 
 
