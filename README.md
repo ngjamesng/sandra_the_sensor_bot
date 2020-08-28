@@ -1,7 +1,7 @@
 ## Sandra the Sensor Bot
 <img src ="IMG_3350.jpg" width ="200" alt="Image of Sandra The Sensor Bot">
 
-Hello, thank you for checking out my repository. Sandra the Sensor Bot is a twitter bot, with an interesting twist. This was really a way for me to incorporate hardware. 
+Hello, thank you for checking out my repository. Sandra the Sensor Bot is a twitter bot, with an interesting twist. This was really a way for me to incorporate hardware into a project, something I've never done before. 
 
 The codebase is mainly written in Python. Sandra currently has the ability to read the temperature, humidity, and air pressure. 
 
@@ -39,7 +39,7 @@ Most of the dependencies should be preinstalled on your Raspberry Pi OS. If you 
 ```
 sudo apt-get install <MISSING_PACKAGE_HERE>
 ```
-You will also need to sign up for a Twitter Developer Account. Please see the instructions to get a [Twitter Developer Account](https://developer.twitter.com/en). Once you have an account, in the home directory of the repot, run the following: `touch .env` and then open the .env file. Paste the following in here: 
+You will also need to sign up for a Twitter Developer Account. Please see the instructions to get a [Twitter Developer Account](https://developer.twitter.com/en). Once you have an account, in the home directory of the repository, run the following: `touch .env` and then open the .env file. Paste the following in here: 
 
 ```
 # API key, Secret Key, and Bearer Token from Twitter
@@ -47,7 +47,7 @@ API_KEY=<API_KEY_GOES_HERE>
 API_SECRET_KEY=<API_SECRET_KEY_GOES_HERE>
 BEARER_TOKEN=<BEARER_TOKEN_GOES_HERE>
 
-# access token and secret from twitter
+# access token and secret from Twitter
 ACCESS_TOKEN=<ACCESS_TOKEN_GOES_HERE>
 ACCESS_TOKEN_SECRET=<ACCESS_TOKEN_SECRET_GOES_HERE>
 ```
