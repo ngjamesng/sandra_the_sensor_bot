@@ -1,3 +1,6 @@
+from sensor_data import Sensor
+
+
 class Message:
     """
     A randomly generated message that incorporates data from the Sense Hat. 
@@ -17,7 +20,6 @@ class Message:
     def get_data(self):
         """get data from Sense Hat and CPU temp,
         and return CPU temp, sennsor temp, humidity, and air pressure."""
-        from sensor_data import Sensor
 
         sensor = Sensor()
         data = sensor.get_data()

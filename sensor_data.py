@@ -1,3 +1,7 @@
+from gpiozero import CPUTemperature
+from sense_hat import SenseHat
+
+
 class Sensor:
     """ A class to get sensor data"""
 
@@ -11,7 +15,7 @@ class Sensor:
         return f"<Sensor data='{self.data}'"
 
     def get_data(self):
-        from sense_hat import SenseHat
+
         sense = SenseHat()
 
         temp = self.get_sensor_temp(sense)
@@ -34,7 +38,6 @@ class Sensor:
         """
         returns the calibrated sensor temperature in Fahrenheit. For example, 70.5F.
         """
-        from gpiozero import CPUTemperature
 
         # first, wake the sensors. The first reading is usually inaccurate.
         sense.get_temperature_from_pressure()
