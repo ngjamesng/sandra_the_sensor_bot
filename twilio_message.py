@@ -6,8 +6,10 @@ from auth import (
     twilio_phone_number,
     my_phone_number
 )
+account_sid = twilio_account_sid
+auth_token = twilio_auth_token
 
-client = Client(account_sid=twilio_account_sid, auth_token=twilio_auth_token)
+client = Client(account_sid, auth_token)
 
 message = client.messages.create(
     body="testing!",
