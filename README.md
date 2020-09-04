@@ -26,12 +26,13 @@ This is not a usual web development project since there is hardware required.
 
 ***As a reminder, you will need the required hardware. This will not work unless you have a Raspberry Pi and Sense HAT.***
 
-Python3 must be installed on your Raspberry Pi. Additionally, you may need to install the following: 
+Python3 must be installed on your Raspberry Pi. Additionally, you may need to `pip install` the following: 
 
 * Twython
 * dotenv
 * python-dotenv
 * python3-matplotlib
+* twilio
 
 You may run into problems depending on which dependency manager you use.
 Most of the dependencies should be preinstalled on your Raspberry Pi OS. If you do run into problems, you can try running:
