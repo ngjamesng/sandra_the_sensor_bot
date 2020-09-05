@@ -40,9 +40,18 @@ Most of the dependencies should be preinstalled on your Raspberry Pi OS. If you 
 ```
 sudo apt-get install <MISSING_PACKAGE_HERE>
 ```
-You will also need to sign up for a Twitter Developer Account. Please see the instructions to get a [Twitter Developer Account](https://developer.twitter.com/en). Once you have an account, in the home directory of the repository, run the following: `touch .env` and then open the .env file. Paste the following in here: 
+You will also need to sign up for a Twitter Developer Account, and a Twilio Developer Account. Please see the instructions to get a [Twitter Developer Account](https://developer.twitter.com/en) and a [Twilio Developer Account](https://www.twilio.com/docs/sms). Once you have an account, in the home directory of the repository, run the following: 
+```
+touch .env
+``` 
+
+and then open the .env file. Paste the following in here: 
 
 ```
+###################
+# TWITTER VARIABLES
+###################
+
 # API key, Secret Key, and Bearer Token from Twitter
 API_KEY=<API_KEY_GOES_HERE>
 API_SECRET_KEY=<API_SECRET_KEY_GOES_HERE>
@@ -51,6 +60,10 @@ BEARER_TOKEN=<BEARER_TOKEN_GOES_HERE>
 # access token and secret from Twitter
 ACCESS_TOKEN=<ACCESS_TOKEN_GOES_HERE>
 ACCESS_TOKEN_SECRET=<ACCESS_TOKEN_SECRET_GOES_HERE>
+
+###################
+# TWILIO VARIABLES
+###################
 
 # Twilio Account SID and auth token. Get these from your Twilio Account
 TWILIO_ACCOUNT_SID=<FROM_TWILIO>
