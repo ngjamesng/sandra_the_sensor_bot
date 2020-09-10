@@ -6,18 +6,22 @@ from os.path import isfile
 
 def get_data():
     '''
-    gets the data from the sensors. Then add a date property. 
+    gets the data from the sensors, then add a date property.
     data = {
         "temperature": "73.5 F",
         "humidity": "50.2 %",
-        "pressure": "1111 mbar"
+        "pressure": "1111 mbar",
         "date" : "dd/mm/YY H:M"
     }
     '''
 
     sensor = Sensor()
-    data = sensor.get_data()
-    data["date"] = datetime.now().strftime("%d/%m/%Y %H:%M")
+    data = {
+        "temperature": sensor.get_sensor_temp(),
+        "humidity": sensor.get_humidity(),
+        "pressure": sensor.get_pressure(),
+        "date": datetime.now().strftime("%d/%m/%Y %H:%M")
+    }
     return data
 
 
