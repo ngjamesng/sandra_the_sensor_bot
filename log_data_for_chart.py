@@ -26,7 +26,7 @@ def write_data(data):
     """
     file_name = "data_log.csv"
     data = get_data()
-    with open(file_name, "W") as csv_file:
+    with open(file_name, "w") as csv_file:
         headers = ["temperature", "humidity", "pressure", "date"]
         csv_writer = DictWriter(csv_file, fieldnames=headers)
         csv_writer.writerow(data)
