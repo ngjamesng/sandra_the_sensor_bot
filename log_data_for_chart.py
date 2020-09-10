@@ -39,9 +39,9 @@ def write_data(data):
             csv_writer.writerow(data)
     else:
         with open(file_name, mode) as csv_file:
-        csv_writer = DictWriter(csv_file, fieldnames=headers)
-        csv_writer.writeheader()
-        csv_writer.writerow(data)
+            csv_writer = DictWriter(csv_file, fieldnames=headers)
+            csv_writer.writeheader()
+            csv_writer.writerow(data)
 
 
 data = get_data()
