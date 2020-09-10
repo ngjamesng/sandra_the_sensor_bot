@@ -29,7 +29,7 @@ def write_data(data):
     '''
 
     file_name = "data_log.csv"
-    file_exists = isfile(isfile(f"./{file_name}"))
+    file_exists = isfile(f"./{file_name}")
     headers = ["temperature", "humidity", "pressure", "date"]
 
     if(file_exists):
