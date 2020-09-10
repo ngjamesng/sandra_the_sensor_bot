@@ -15,12 +15,22 @@ class Sensor:
         return f"<Sensor data='{self.data}'"
 
     def get_data(self):
+        """
+        Gets the temperature, humidity, & pressure, 
+        and adds the measurement to the end of the value.
+            data = {
+                "temperature": "73.5 F",
+                "humidity": "50.2 %",
+                "pressure": "1111 mbar"
+                "date" : "dd/mm/YY H:M"
+            }
+        """
 
         sense = SenseHat()
 
-        temp = self.get_sensor_temp(sense)
-        humidity = self.get_humidity(sense)
-        pressure = self.get_pressure(sense)
+        temp = f"{self.get_sensor_temp(sense)} F"
+        humidity = f"{self.get_humidity(sense)} %"
+        pressure = f"{self.get_pressure(sense)} mbar"
 
         data = {
             "temperature": temp,

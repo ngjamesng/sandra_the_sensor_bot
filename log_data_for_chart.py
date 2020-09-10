@@ -3,6 +3,7 @@ from csv import DictWriter
 from datetime import datetime
 from os.path import isfile
 
+
 def get_data():
     '''
     gets the data from the sensors. 
@@ -23,22 +24,24 @@ def get_data():
 def write_data(data):
     """
     Takes in data and writes the result into a CSV file.
-    If the file does not exist(has been deleted), then create a new file, write a header and append the data. 
-    Else, the CSV file already exists(has not yet been deleted), then just append data.
+    If the CSV file already exists(has not yet been deleted), then just append data.
+    Else, the file does not exist(has been deleted), then create a new file, write a headers and append the data. 
     """
     file_name = "data_log.csv"
-    headers = ["temperature", "humidity", "pressure", "date"]
-    mode = "a" if isfile(isfile(f"./{file_name}")) else "w"
-    
-    if(not isfile(f"./{file_name}")):
-        with open(file_name, "w") as csv_file:
+    file_exists = isfile(isfile(f"./{file_name}"))
+    mode = "a" if file_exists else "w"
+
+    if(file_exists):
+        with open(file_name, mode) as csv_file:
             csv_writer = DictWriter(csv_file, fieldnames=headers)
-            csv_writer.writeheader()
             csv_writer.writerow(data)
     else:
-        with open(file_name, "a") as csv_file:
-            csv_writer = DictWriter(csv_file, fieldnames=headers)
-            csv_writer.writerow(data)            
-            
+        with open(file_name, mode) as csv_file:
+        headers = ["temperature", "humidity", "pressure", "date"]
+        csv_writer = DictWriter(csv_file, fieldnames=headers)
+        csv_writer.writeheader()
+        csv_writer.writerow(data)
+
+
 data = get_data()
 write_data(data)
