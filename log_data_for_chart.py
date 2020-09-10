@@ -13,9 +13,11 @@ def get_data():
     pressure = data.pressure
 
     print("temp!", temp)
-    
+
 
 def write_data(data):
     """
     Takes in data and writes the results into a CSV file. 
     """
+
+get_data()
