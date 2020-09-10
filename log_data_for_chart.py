@@ -6,7 +6,7 @@ from os.path import isfile
 
 def get_data():
     '''
-    gets the data from the sensors. 
+    gets the data from the sensors. Then add a date property. 
     data = {
         "temperature": "73.5 F",
         "humidity": "50.2 %",
@@ -22,14 +22,16 @@ def get_data():
 
 
 def write_data(data):
-    """
+    '''
     Takes in data and writes the result into a CSV file.
     If the CSV file already exists(has not yet been deleted), then just append data.
     Else, the file does not exist(has been deleted), then create a new file, write a headers and append the data. 
-    """
+    '''
+
     file_name = "data_log.csv"
     file_exists = isfile(isfile(f"./{file_name}"))
     mode = "a" if file_exists else "w"
+    headers = ["temperature", "humidity", "pressure", "date"]
 
     if(file_exists):
         with open(file_name, mode) as csv_file:
@@ -37,7 +39,6 @@ def write_data(data):
             csv_writer.writerow(data)
     else:
         with open(file_name, mode) as csv_file:
-        headers = ["temperature", "humidity", "pressure", "date"]
         csv_writer = DictWriter(csv_file, fieldnames=headers)
         csv_writer.writeheader()
         csv_writer.writerow(data)
