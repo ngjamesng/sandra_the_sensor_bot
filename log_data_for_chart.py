@@ -16,12 +16,8 @@ def get_data():
     '''
 
     sense = Sensor()
-    data = {
-        "temperature": sense.get_sensor_temp(sense),
-        "humidity": sense.get_humidity(sense),
-        "pressure": sense.get_pressure(sense),
-        "date": datetime.now().strftime("%d/%m/%Y %H:%M")
-    }
+    data = sense.get_data()
+    data["date"] = datetime.now().strftime("%d/%m/%Y %H:%M")
     return data
 
 
