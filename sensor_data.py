@@ -10,7 +10,7 @@ class Sensor:
         self.data = data
 
     def __repr__(self):
-        """show representation of Message"""
+        """show representation of sensor data"""
 
         return f"<Sensor data='{self.data}'"
 
@@ -18,12 +18,12 @@ class Sensor:
         """
         Gets the temperature, humidity, & pressure, 
         and adds the measurement to the end of the value.
-            data = {
-                "temperature": "73.5 F",
-                "humidity": "50.2 %",
-                "pressure": "1111 mbar"
-                "date" : "dd/mm/YY H:M"
-            }
+
+        data = {
+            "temperature": "73.5 F",
+            "humidity": "50.2 %",
+            "pressure": "1111 mbar"
+        }
         """
 
         sense = SenseHat()
@@ -41,6 +41,10 @@ class Sensor:
         return data
 
     def C_TO_F(self, c):
+        """
+        Celsius to Fahrenheight conversion.
+        """
+
         f = (c*9/5)+32
         return f
 
@@ -65,7 +69,7 @@ class Sensor:
         calibrated_temp = sense_temp - ((cpu_temp - sense_temp)/FACTOR)
         calibrated_temp = round(calibrated_temp, 1)
 
-        return f"{calibrated_temp} F"
+        return calibrated_temp
 
     def get_humidity(self, sense):
         """returns the humidity. For example, 50.5%.
@@ -73,10 +77,10 @@ class Sensor:
 
         humidity = sense.get_humidity()
         humidity = round(humidity, 1)
-        return f"{humidity} %"
+        return humidity
 
     def get_pressure(self, sense):
         """ returns the air pressure in Millibars. For example, 1000 mbar"""
         pressure = sense.get_pressure()
         pressure = round(pressure, 1)
-        return f"{pressure} mbar"
+        return pressure
