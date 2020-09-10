@@ -15,11 +15,11 @@ def get_data():
     }
     '''
 
-    sensor = Sensor()
+    sense = Sensor()
     data = {
-        "temperature": sensor.get_sensor_temp(),
-        "humidity": sensor.get_humidity(),
-        "pressure": sensor.get_pressure(),
+        "temperature": sense.get_sensor_temp(sense),
+        "humidity": sense.get_humidity(sense),
+        "pressure": sense.get_pressure(sense),
         "date": datetime.now().strftime("%d/%m/%Y %H:%M")
     }
     return data
