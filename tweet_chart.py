@@ -35,6 +35,6 @@ def tweet_chart_image(img_file_name = "chart.png"):
     with open(img_file_name, "rb") as image:
         response_1 = twitter.upload_media(media=image)
         response_2 = twitter.update_status(status="Here's a chart of my data!", media_ids=[response_1["media_id"]])
-        
+        print("Tweeted: %s" % response_2["text"])
         
 tweet_chart_image()
