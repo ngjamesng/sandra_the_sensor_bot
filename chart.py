@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from dateutil import parser
-from csv import DictReader
+
 
 class Chart:
     """
@@ -23,7 +23,7 @@ class Chart:
         return f"< Chart temperature = '{self.temperature}' humidity = '{self.humidity}' air_pressure = '{self.pressure}' >"
 
 
-    def plot(self):
+    def plot_and_create_image(self, image_name="chart.png"):
         """
         create a plot graph of the sensor data.
         """
@@ -45,13 +45,4 @@ class Chart:
         
         
         fig.tight_layout()
-        plt.show()
-
-data = None
-file_name = file_name = "data_log.csv"
-with open(file_name, "r") as file:
-    csv_reader = DictReader(file)
-    data = list(csv_reader)
-    
-chart = Chart(data)
-chart.plot()
+        plt.savefig(image_name)
