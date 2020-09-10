@@ -8,9 +8,9 @@ def get_data():
 
     sensor = Sensor()
     data = sensor.get_data()
-    temp = data.temperature
-    humidity = data.humidity
-    pressure = data.pressure
+    temp = data.get(temperature)
+    humidity = data.get(humidity)
+    pressure = data.get(pressure)
 
     print("temp!", temp)
 
