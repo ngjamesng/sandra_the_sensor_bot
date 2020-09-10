@@ -30,15 +30,14 @@ def write_data(data):
 
     file_name = "data_log.csv"
     file_exists = isfile(isfile(f"./{file_name}"))
-    mode = "a" if file_exists else "w"
     headers = ["temperature", "humidity", "pressure", "date"]
 
     if(file_exists):
-        with open(file_name, mode) as csv_file:
+        with open(file_name, "a") as csv_file:
             csv_writer = DictWriter(csv_file, fieldnames=headers)
             csv_writer.writerow(data)
     else:
-        with open(file_name, mode) as csv_file:
+        with open(file_name, "w") as csv_file:
             csv_writer = DictWriter(csv_file, fieldnames=headers)
             csv_writer.writeheader()
             csv_writer.writerow(data)
