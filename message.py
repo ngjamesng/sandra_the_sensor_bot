@@ -29,7 +29,7 @@ class Message:
     def set_rest(self):
         """calls to get data and sets the instance's rest of the message."""
         data = self.get_data()
-        self.conditions = f"""{data['temperature']}, {data['humidity']} humidity, and the air pressure is {data['pressure']}."""
+        self.conditions = f"""{data['temperature']} F, {data['humidity']} % humidity, and the air pressure is {data['pressure']} mbar."""
 
     def get_message(self):
         """returns the message to be tweeted."""

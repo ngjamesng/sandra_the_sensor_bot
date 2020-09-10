@@ -16,8 +16,7 @@ class Sensor:
 
     def get_data(self):
         """
-        Gets the temperature, humidity, & pressure, 
-        and adds the measurement to the end of the value.
+        Gets the temperature, humidity, & pressure. The measurement at the end is not included. 
 
         data = {
             "temperature": "73.5 F",
@@ -28,9 +27,9 @@ class Sensor:
 
         sense = SenseHat()
 
-        temp = f"{self.get_sensor_temp(sense)} F"
-        humidity = f"{self.get_humidity(sense)} %"
-        pressure = f"{self.get_pressure(sense)} mbar"
+        temp = f"{self.get_sensor_temp(sense)}"
+        humidity = f"{self.get_humidity(sense)}"
+        pressure = f"{self.get_pressure(sense)}"
 
         data = {
             "temperature": temp,
