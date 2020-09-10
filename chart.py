@@ -45,7 +45,6 @@ class Chart:
         
         
         fig.tight_layout()
-        plt.legend()
         plt.show()
 
 data = None
