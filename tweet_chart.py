@@ -17,6 +17,7 @@ twitter = Twython(
     access_token_secret
 )
 
+csv_file_name = "data_log.csv"
 
 def tweet_chart_image(img_file_name="chart.png"):
     """
@@ -37,7 +38,6 @@ def tweet_chart_image(img_file_name="chart.png"):
             status="Here's a chart of my data!", media_ids=[response_1["media_id"]])
         print("Tweeted: %s" % response_2["text"])
 
-
 def delete_data(file_name=csv_file_name):
     """
     Deletes the data_log.csv file. 
@@ -46,7 +46,5 @@ def delete_data(file_name=csv_file_name):
     if os.path.exists(file_name):
         os.remove(file_name)
 
-
-csv_file_name = "data_log.csv"
-tweet_chart_image(csv_file_name)
+tweet_chart_image("chart.png")
 delete_data(csv_file_name)
