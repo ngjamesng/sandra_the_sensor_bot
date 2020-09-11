@@ -76,10 +76,27 @@ MY_PHONE_NUMBER=<YOUR_PHONE_NUMBER>
 
 
 
-## How to run the program *** WIP ***
+## How to run Sandra with crontab: *** WIP ***
 
 In your terminal, run:
 ```
-python3 twitter.py
+crontab -e
+```
+
+then, paste the following in the crontab editor, and change the PATH_TO_REPO to the appropriate path: 
+```
+#################################
+# Sandra the Sensor Bot Cron jobs
+#################################
+
+# log data for chart every 4 hours(0, 3, 6, 8, etc)
+0 0,3,6,9,12,15,18,21 * * * python3 <PATH_TO_REPO>/sandra_the_sensor_bot/log_data_for_chart.py
+
+# tweet chart image every week at 9:00 on Tuesday
+0 9 * * 2 python3 <PATH_TO_REPO>/sandra_the_sensor_bot/tweet_chart.py
+
+# tweet current conditions 2-4 times a week at 11:45 on Monday and Wednesday
+45 11 * * 1,3 python3 <PATH_TO_REPO>/sandra_the_sensor_bot/tweet_message.py
 ```
 This will post the message with the data to your account.
+
