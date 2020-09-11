@@ -3,10 +3,13 @@ from sensor_data import Sensor
 
 class Message:
     """
-    A randomly generated message that incorporates data from the Sense Hat. 
+    A randomly generated message that incorporates data from the Sense Hat.
     """
 
-    def __init__(self, greeting="Hello!", condition_intro="The conditions in my current room is ", conditions=""):
+    def __init__(self,
+                 greeting="Hello!",
+                 condition_intro="The conditions in my current room is ",
+                 conditions=""):
         """optionally takes a greeting and an intro to the conditions"""
         self.greeting = greeting
         self.condition_intro = condition_intro
@@ -15,7 +18,7 @@ class Message:
     def __repr__(self):
         """show representation of Message"""
 
-        return f"<Message greeting='{self.greeting}' condition_intro ='{self.condition_intro}' self.conditions='{self.conditions}'>"
+        return f"<Message greeting='{self.greeting}' condition_intro='{self.condition_intro}' self.conditions='{self.conditions}'>"
 
     def get_data(self):
         """get data from Sense Hat and CPU temp,

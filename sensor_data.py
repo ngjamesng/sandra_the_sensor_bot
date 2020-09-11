@@ -5,8 +5,11 @@ from sense_hat import SenseHat
 class Sensor:
     """ A class to get sensor data"""
 
-    def __init__(self, data={"temperature": "", "humidity": "", "pressure": ""}):
-        """Make a new data dictionary for temperature, humidity, and pressure"""
+    def __init__(self,
+                 data={"temperature": "", "humidity": "", "pressure": ""}):
+        """
+        Make a new data dictionary for temperature, humidity, and pressure
+        """
         self.data = data
 
     def __repr__(self):
@@ -16,7 +19,8 @@ class Sensor:
 
     def get_data(self):
         """
-        Gets the temperature, humidity, & pressure. The measurement at the end is not included. 
+        Gets the temperature, humidity, & pressure.
+        The measurement at the end is not included.
 
         data = {
             "temperature": "73.5 F",
@@ -49,7 +53,8 @@ class Sensor:
 
     def get_sensor_temp(self, sense):
         """
-        returns the calibrated sensor temperature in Fahrenheit. For example, 70.5F.
+        returns the calibrated sensor temperature in Fahrenheit.
+        For example, 70.5F.
         """
 
         # first, wake the sensors. The first reading is usually inaccurate.
@@ -71,7 +76,8 @@ class Sensor:
         return calibrated_temp
 
     def get_humidity(self, sense):
-        """returns the humidity. For example, 50.5%.
+        """
+        returns the humidity. For example, 50.5%.
         """
 
         humidity = sense.get_humidity()

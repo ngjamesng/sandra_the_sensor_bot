@@ -24,8 +24,10 @@ def get_data():
 def write_data(data):
     '''
     Takes in data and writes the result into a CSV file.
-    If the CSV file already exists(has not yet been deleted), then just append data.
-    Else, the file does not exist(has been deleted), then create a new file, write a headers and append the data. 
+    If the CSV file already exists(has not yet been deleted),
+    then just append data.
+    Else, the file does not exist(has been deleted),
+    then create a new file, write a headers and append the data.
     '''
 
     file_name = "data_log.csv"
