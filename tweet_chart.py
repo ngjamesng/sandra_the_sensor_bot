@@ -17,7 +17,7 @@ twitter = Twython(
     access_token_secret
 )
 
-csv_file_name = "data_log.csv"
+CSV_FILE_NAME = "data_log.csv"
 
 def tweet_chart_image(img_file_name="chart.png"):
     """
@@ -25,7 +25,7 @@ def tweet_chart_image(img_file_name="chart.png"):
     """
     data = None
 
-    with open(csv_file_name, "r") as file:
+    with open(CSV_FILE_NAME, "r") as file:
         csv_reader = DictReader(file)
         data = list(csv_reader)
 
@@ -38,7 +38,7 @@ def tweet_chart_image(img_file_name="chart.png"):
             status="Here's a chart of my data!", media_ids=[response_1["media_id"]])
         print("Tweeted: %s" % response_2["text"])
 
-def delete_data(file_name=csv_file_name):
+def delete_data(file_name="data_log.csv"):
     """
     Deletes the data_log.csv file. 
     This is to be used to clear the data after tweeting the chart, to start a new week. 
@@ -47,4 +47,4 @@ def delete_data(file_name=csv_file_name):
         os.remove(file_name)
 
 tweet_chart_image("chart.png")
-delete_data(csv_file_name)
+delete_data(CSV_FILE_NAME)
