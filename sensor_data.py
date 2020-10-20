@@ -59,7 +59,6 @@ class Sensor:
 
         # first, wake the sensors. The first reading is usually inaccurate.
         sense.get_temperature()
-        
         number_of_measurements = 30
 
         sensor_temps = [sense.get_temperature() for i in range(number_of_measurements)]
