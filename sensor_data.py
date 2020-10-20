@@ -58,13 +58,15 @@ class Sensor:
         """
 
         # first, wake the sensors. The first reading is usually inaccurate.
-        sense.get_temperature_from_pressure()
-        sense.get_temperature_from_humidity()
+        sense.get_temperature()
+        
+        number_of_measurements = 30
 
-        pressure_temp = sense.get_temperature_from_pressure()
-        humidity_temp = sense.get_temperature_from_humidity()
-        sense_temp = (pressure_temp + humidity_temp) / 2
-        cpu_temp = CPUTemperature().temperature
+        sensor_temps = [sense.get_temperature() for i in range(number_of_measurements)]
+        cpu_temps = [CPUTemperature().temperature for i in range(number_of_measurements)]
+
+        sense_temp = sum(sensor_temps) / number_of_measurements
+        cpu_temp = sum(cpu_temps) / number_of_measurements
         # convert values from Celsius to Fahrenheit
         sense_temp = self.C_TO_F(sense_temp)
         cpu_temp = self.C_TO_F(cpu_temp)
