@@ -97,6 +97,9 @@ then, paste the following in the crontab editor, and change the PATH_TO_REPO to 
 
 # tweet current conditions 2-4 times a week at 11:45 on Monday and Wednesday
 45 11 * * 1,3 cd /PATH_TO_REPO && python3 tweet_sensor_message.py
+
+# tweet a fact every week at 11:00 on Thursday
+0 11 * * 4 cd /PATH_TO_REPO && python3 tweet_fact_message.py
 ```
 
 This will log periodic data, post chart images weekly, and post messages to your account.
