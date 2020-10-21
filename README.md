@@ -100,6 +100,9 @@ then, paste the following in the crontab editor, and change the PATH_TO_REPO to 
 
 # tweet a fact every week at 11:00 on Thursday
 0 11 * * 4 cd /PATH_TO_REPO && python3 tweet_fact_message.py
+
+# tweet a joke every week at 12:00 PM on Friday
+0 12 * * 5 cd /PATH_TO_REPO && python3 joke_message.py
 ```
 
 This will log periodic data, post chart images weekly, and post messages to your account.
