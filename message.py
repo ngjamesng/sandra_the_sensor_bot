@@ -34,7 +34,7 @@ class Message:
         data = self.get_data()
         self.conditions = f"""{data['temperature']} F, {data['humidity']} % humidity, and the air pressure is {data['pressure']} mbar."""
 
-    def get_message(self):
+    def get_message(self) -> str:
         """returns the message to be tweeted."""
         self.set_rest()
         message = f"{self.greeting} {self.condition_intro} {self.conditions}"
