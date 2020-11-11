@@ -17,7 +17,7 @@ class Sensor:
 
         return f"<Sensor data='{self.data}'"
 
-    def get_data(self):
+    def get_data(self) -> dict:
         """
         Gets the temperature, humidity, & pressure.
         The measurement at the end is not included.
@@ -43,7 +43,7 @@ class Sensor:
 
         return data
 
-    def C_TO_F(self, c):
+    def C_TO_F(self, c:float ) -> float:
         """
         Celsius to Fahrenheight conversion.
         """
@@ -51,7 +51,7 @@ class Sensor:
         f = (c*9/5)+32
         return f
 
-    def get_sensor_temp(self, sense):
+    def get_sensor_temp(self, sense: SenseHat) -> float:
         """
         returns the calibrated sensor temperature in Fahrenheit.
         For example, 70.5F.
@@ -76,7 +76,7 @@ class Sensor:
 
         return calibrated_temp
 
-    def get_humidity(self, sense):
+    def get_humidity(self, sense: SenseHat) -> float:
         """
         returns the humidity. For example, 50.5%.
         """
@@ -85,7 +85,7 @@ class Sensor:
         humidity = round(humidity, 1)
         return humidity
 
-    def get_pressure(self, sense):
+    def get_pressure(self, sense:SenseHat ) -> float:
         """ returns the air pressure in Millibars. For example, 1000 mbar"""
         pressure = sense.get_pressure()
         pressure = round(pressure, 1)
