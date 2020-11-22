@@ -66,15 +66,27 @@ class Sensor:
 
         sense_temp = sum(sensor_temps) / number_of_measurements
         cpu_temp = sum(cpu_temps) / number_of_measurements
-        # convert values from Celsius to Fahrenheit
-        sense_temp = self.C_TO_F(sense_temp)
-        cpu_temp = self.C_TO_F(cpu_temp)
 
-        FACTOR = 5.446
-        calibrated_temp = sense_temp - ((cpu_temp - sense_temp)/FACTOR)
-        calibrated_temp = round(calibrated_temp, 1)
 
-        return calibrated_temp
+        # # convert values from Celsius to Fahrenheit
+        # sense_temp = self.C_TO_F(sense_temp)
+        # cpu_temp = self.C_TO_F(cpu_temp)
+
+        # FACTOR = 5.446
+        # calibrated_temp = sense_temp - ((cpu_temp - sense_temp)/FACTOR)
+        # calibrated_temp = round(calibrated_temp, 1)
+        
+        # return calibrated_temp
+
+
+        # from https://github.com/astro-pi/watchdog/blob/master/watchdog.py#L2399
+
+        FACTOR = cpu_temp / 2.5
+        calibrated_temp = sense_temp - FACTOR
+        calibrated_temp_c = self.C_TO_F(calibrated_temp)
+        calibrated_temp_c = round(calibrated_temp, 1)
+
+        return calibrated_temp_c
 
     def get_humidity(self, sense: SenseHat) -> float:
         """
