@@ -84,7 +84,7 @@ class Sensor:
         FACTOR = cpu_temp / 2.5
         calibrated_temp = sense_temp - FACTOR
         calibrated_temp_c = self.C_TO_F(calibrated_temp)
-        calibrated_temp_c = round(calibrated_temp, 1)
+        calibrated_temp_c = round(calibrated_temp_c, 1)
 
         return calibrated_temp_c
 
