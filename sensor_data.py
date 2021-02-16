@@ -81,7 +81,7 @@ class Sensor:
 
         # from https://github.com/astro-pi/watchdog/blob/master/watchdog.py#L2399
 
-        FACTOR = cpu_temp / 2.5
+        FACTOR = cpu_temp / 5.446
         calibrated_temp = sense_temp - FACTOR
         calibrated_temp_c = self.C_TO_F(calibrated_temp)
         calibrated_temp_c = round(calibrated_temp_c, 1)
